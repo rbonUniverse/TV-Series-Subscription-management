@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Subscriptions Page</h1>
+    <div class="addNewMemberAndBackToMainPageButtons">
+      <div class="backToMainPageButtonInMembersPage">
+        <form method="POST" action="/mainPage">
+          <button>Back to Main Page</button>
+        </form>
+      </div>
+      <button class="addNewMemberButton">
+        <a href="/subscriptions/new">Add New Member</a>
+      </button>
+    </div>
+    <br />
+    <br />
+    <table class="tbSubscriptionsPage">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Shows Member Subscribed</th>
+        <% if (!permissions.includes("createSubscriptions")) { } else { %>
+        <th>Subscribe to a New Show</th>
+        <% } %> <% if (!permissions.includes("updateSubscriptions")) { } else {
+        %>
+        <th>Edit</th>
+        <% } %> <% if (!permissions.includes("deleteSubscriptions")) { } else {
+        %>
+        <th>Delete</th>
+        <% } %>
+      </tr>
+      <% member.forEach (subs => { %>
+      <tr>
+        <td><%= subs.Name %></td>
+        <td><%= subs.Email %></td>
+        <td><%= subs.City %></td>
+        <td>
+          <% subs.showsDetails.forEach(img => { %>
+          <ul>
+            <li>
+              <a class="memberLink" href="/shows/details/<%= img._id %>">
+                <%= img.Name %></a
+              >
+            </li>
+            <li><img class="subscriptionsImage" src="<%= img.Image %>" /></li>
+          </ul>
+          <% }) %>
+        </td>
+        <% if (!permissions.includes("createSubscriptions")) { } else { %>
+        <td>
+          <button>
+            <a href="/subscriptions/new/<%= subs._id %>">Subscribe</a>
+          </button>
+        </td>
+        <% } %> <% if (!permissions.includes("updateSubscriptions")) { } else {
+        %>
+        <td>
+          <button>
+            <a href="/subscriptions/member/<%= subs._id %>">Edit</a>
+          </button>
+        </td>
+        <% } %> <% if (!permissions.includes("deleteSubscriptions")) { } else {
+        %>
+        <td>
+          <form
+            id="deleteMemberForm"
+            method="POST"
+            action="/subscriptions/delete/<%= subs._id %>"
+          >
+            <button onclick="this.form.submit()" type="submit">Delete</button>
+          </form>
+        </td>
+        <% } %>
+      </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>

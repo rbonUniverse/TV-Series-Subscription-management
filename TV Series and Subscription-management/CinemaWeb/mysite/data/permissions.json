@@ -1,0 +1,35 @@
+{
+  "permissions": [
+    {
+      "userId": "6456ada0862b9043f1b1a47f",
+      "userPermissions": [
+        "viewSubscriptions",
+        "createSubscriptions",
+        "deleteSubscriptions",
+        "updateSubscriptions",
+        "viewShows",
+        "createShows",
+        "deleteShows",
+        "updateShows"
+      ]
+    },
+    {
+      "userId": "64850a38bc335c9653d074b5",
+      "userPermissions": [
+        "createSubscriptions",
+        "viewShows",
+        "createShows",
+        "deleteShows"
+      ]
+    },
+    {
+      "userId": "6491d2d4bb843f6e2beacdde",
+      "userPermissions": [
+        "viewSubscriptions",
+        "createSubscriptions",
+        "deleteSubscriptions",
+        "updateSubscriptions"
+      ]
+    }
+  ]
+}

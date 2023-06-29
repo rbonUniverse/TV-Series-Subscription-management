@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "firstName": "Admin",
+      "lastName": "Admin",
+      "sessionTimeOut": null,
+      "createdDate": "05/05/2023",
+      "_id": "6456ada0862b9043f1b1a47f"
+    },
+    {
+      "firstName": "Eran",
+      "lastName": "Zigi",
+      "sessionTimeOut": 12,
+      "createdDate": "11/06/2023",
+      "_id": "64850a38bc335c9653d074b5"
+    },
+    {
+      "firstName": "RRR",
+      "lastName": "BBB",
+      "sessionTimeOut": 5,
+      "createdDate": "20/06/2023",
+      "_id": "6491d2d4bb843f6e2beacdde"
+    }
+  ]
+}

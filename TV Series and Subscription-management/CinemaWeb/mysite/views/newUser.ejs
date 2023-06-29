@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Add New User</h1>
+    <div class="addNewUserFormCancelAndBackButtons">
+      <div class="backToMainPageButtonInNewUserPage">
+        <form method="POST" action="/mainPage">
+          <button>Back to Main Page</button>
+        </form>
+      </div>
+      <div class="backToUsersManagementPageButton">
+        <button><a href="/usersManagement">Cancel</a></button>
+      </div>
+    </div>
+    <br />
+    <br />
+    <form
+      id="newUserForm"
+      method="POST"
+      action="/newUser/add"
+      class="newUserForm"
+    >
+      <br />
+      <div class="columnForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" />
+        <br />
+        <br />
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="lastName" />
+        <br />
+        <br />
+        <label for="username">Enter Username:</label>
+        <input type="text" name="username" />
+        <br />
+        <br />
+        <label for="sessionTimeOut">Session TimeOut:</label>
+        <input type="number" name="sessionTimeOut" />
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <div class="column">
+        <h4>Permissions:</h4>
+        <div class="row">
+          <br />
+          <div class="viewSubscriptions">
+            <input
+              type="checkbox"
+              name="permissions"
+              value="viewSubscriptions"
+            />
+            <label for="permissions"> View Subscriptions </label>
+          </div>
+          <div class="createSubscriptions">
+            <input
+              type="checkbox"
+              name="permissions"
+              value="createSubscriptions"
+            />
+            <label for="permissions"> Create Subscriptions </label>
+          </div>
+          <div class="deleteSubscriptions">
+            <input
+              type="checkbox"
+              name="permissions"
+              value="deleteSubscriptions"
+            />
+            <label for="permissions"> Delete Subscriptions </label>
+          </div>
+          <div class="updateSubscriptions">
+            <input
+              type="checkbox"
+              name="permissions"
+              value="updateSubscriptions"
+            />
+            <label for="permissions"> Update Subscription </label>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="viewShows">
+            <input type="checkbox" name="permissions" value="viewShows" />
+            <label for="permissions"> View Shows </label>
+          </div>
+          <div class="createShows">
+            <input type="checkbox" name="permissions" value="createShows" />
+            <label for="permissions"> Create Shows </label>
+          </div>
+          <div class="deleteShows">
+            <input type="checkbox" name="permissions" value="deleteShows" />
+            <label for="permissions"> Delete Shows </label>
+          </div>
+          <div class="updateShows">
+            <input type="checkbox" name="permissions" value="updateShows" />
+            <label for="permissions"> Update Shows </label>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="addNewUserFormButton">
+        <button onclick="this.form.submit()" type="submit">Add User</button>
+      </div>
+    </form>
+  </body>
+</html>

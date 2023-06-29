@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Add New Member</h1>
+    <form
+      id="newMemberForm"
+      method="POST"
+      action="/subscriptions/new"
+    >
+      <br />
+      <div class="columnForm">
+        <label for="Name">Full Name:</label>
+        <input type="text" name="Name" />
+        <br />
+        <br />
+        <label for="Email">Email:</label>
+        <input type="text" name="Email" />
+        <br />
+        <br />
+        <label for="City">City:</label>
+        <input type="text" name="City" />
+      </div>
+      <br />
+      <div class="addNewMemberAddCancelButton">
+      <div class="addNewMemberButton">
+        <button onclick="this.form.submit()" type="submit">
+          Add New Member
+        </button>
+    </form>
+      </div>
+      <br />
+      <br />
+        <div class="backToShowsPageButton">
+              <button><a href="/subscriptions">Cancel</a></button>
+            </div>
+      </div>
+  </body>
+</html>

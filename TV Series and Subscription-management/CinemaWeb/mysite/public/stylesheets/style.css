@@ -1,0 +1,253 @@
+html,
+body,
+#root {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 100%;
+  background-color: #2596be;
+}
+
+.showImage {
+  height: 100px;
+  width: 70px;
+}
+
+.showDetailsImage {
+  height: 295px;
+  width: 210px;
+}
+
+.subscriptionsImage {
+  height: 40px;
+  width: 30px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+h1 {
+  margin-right: 3cm;
+  font-size: 40px;
+}
+
+.navigationPage {
+  margin-right: 0.7cm;
+  font-size: 40px;
+}
+
+.memberSubscriptionsToShows {
+  margin-right: 3cm;
+}
+
+h4 {
+  margin-right: 5%;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.log-in,
+.createAccountForm {
+  margin: 10%;
+}
+
+.tb {
+  width: 1300px;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.tbSubscriptionsPage {
+  margin-left: 1cm;
+  width: 1300px;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.divMainPageForms,
+.addNewShowAndBackToMainPageButtons,
+.addNewMemberAndBackToMainPageButtons,
+.addNewUserFormCancelAndBackButtons,
+.maneuverButtonsUsersManagement {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.mainPageAndCancelButtonsInUpdatePage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-right: 1cm;
+}
+
+.backToMainPageButtonInUpdateUserPage {
+  margin-right: 20cm;
+}
+
+.backToMainPageButtonInShowsPage,
+.backToUsersManagementPageButton {
+  margin-left: 1.5cm;
+}
+
+.addNewShowButton,
+.addNewUserPageButton,
+.addNewMemberAddCancelButton {
+  margin-right: 2cm;
+}
+
+.backToMainPageButtonInNewUserPage,
+.backToMainPageButtonInMembersPage {
+  margin-right: 15cm;
+}
+
+.addNewMemberButton {
+  margin-left: 15cm;
+}
+
+.editMemberAndCancelButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.addNewShowPageButtons,
+.editShowPageButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+.subscriptionFormAndButtonAndCancelButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3cm;
+  margin-right: 3cm;
+}
+
+.addNewMemberAddCancelButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-right: 6.5cm;
+}
+
+.editMemberButton,
+.addShowButton,
+.backToShowsPageButton,
+.addShowButton,
+.backToShowsPageButton,
+.subscriptionFormAndButton,
+.backToSubscriptionsPageButton,
+.addNewMemberButton,
+.backToShowsPageButton,
+.cancelButton,
+.updateUserButton,
+.editShowButton,
+.backToShowsPageButtonInEditPage {
+  margin-right: 10px;
+}
+
+.createShowForm,
+.editShowForm,
+.createMemberForm,
+.editMemberForm {
+  margin-right: 10%;
+  margin-top: 5%;
+}
+
+.loginButton {
+  margin-left: 4.5cm;
+}
+
+.addNewShowButton {
+  margin-bottom: 2%;
+  margin-left: 22.6cm;
+}
+
+.addNewMemberButton {
+  margin-bottom: 1.5%;
+  margin-left: 1.3cm;
+}
+
+.newUserLink {
+  margin: 21%;
+}
+
+.memberLink {
+  color: white;
+}
+
+.spanForm {
+  margin-left: 26%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.spanTitle {
+  margin-right: 3cm;
+  font-size: 45px;
+  font-family: "Times New Roman";
+  font-weight: bold;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  margin-left: 34%;
+  align-items: flex-start;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.columnForm {
+  text-align: left;
+  margin-left: 34%;
+}
+
+.addNewUserFormButton {
+  margin-right: 385px;
+}
+
+.updateUserButton {
+  margin-right: 365px;
+}
+
+.updateUserFormButton,
+.addNewMemberFormButton {
+  margin-right: 350px;
+}
+
+.updateUserFormCancelAndBackButtons,
+.addNewMemberFormCancelAndBackButtons {
+  margin-right: 262px;
+}
+
+.viewSubscriptions,
+.createSubscriptions,
+.deleteSubscriptions,
+.updateSubscription,
+.viewMovies,
+.createMovies,
+.deleteMovies,
+.updateMovie {
+  margin-right: 15px;
+}

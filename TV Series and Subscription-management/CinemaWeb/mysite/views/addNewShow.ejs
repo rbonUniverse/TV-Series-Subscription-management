@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Add Show</h1>
+    <div class="createShowForm">
+      <form id="newShowForm" method="POST" action="/shows/new">
+        <label for="Name">Show Name:</label>
+        <input type="text" name="Name" />
+        <br />
+        <br />
+        <label for="Genres">Genres:</label>
+        <input type="text" name="Genres" />
+        <br />
+        <br />
+        <label for="Date">Premiered:</label>
+        <input type="date" name="Date" />
+        <br />
+        <br />
+        <label for="Image">Image URL:</label>
+        <input type="text" name="Image" />
+        <br />
+        <br />
+        <div class="addNewShowPageButtons">
+          <div class="addShowButton">
+            <button onclick="this.form.submit()" type="submit">Add</button>
+          </div>
+        </form>
+        <div class="backToShowsPageButton">
+          <button><a href="/shows">Cancel</a></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

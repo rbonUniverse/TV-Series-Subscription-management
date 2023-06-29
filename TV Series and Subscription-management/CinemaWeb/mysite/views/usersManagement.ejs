@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Users Management Page</h1>
+    <div class="maneuverButtonsUsersManagement">
+      <div class="backToMainPageButton">
+        <form method="POST" action="/mainPage">
+          <button>Back to Main Page</button>
+        </form>
+      </div>
+      <div class="addNewUserPageButton">
+        <button><a href="/newUser">Add New User</a></button>
+      </div>
+    </div>
+    <br />
+    <br />
+    <table class="tb">
+      <tr>
+        <th>Name</th>
+        <th>User Name</th>
+        <th>Session Time Out</th>
+        <th>Created Date</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+      <% users.filter((u) => { %>
+      <tr>
+        <td><%= `${u.firstName} ${u.lastName}` %></td>
+        <td><%= u[0].username %></td>
+        <td><%= u.sessionTimeOut %></td>
+        <td><%= u.createdDate %></td>
+        <td>
+          <div class="maneuverButtonsUsersManagement">
+            <button><a href="/updateUser/<%= u._id %>">Update</a></button>
+          </div>
+        </td>
+        <td>
+          <form
+            id="deleteUserForm"
+            method="POST"
+            action="/usersManagement/<%= u._id %>"
+          >
+            <button onclick="this.form.submit()" type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>

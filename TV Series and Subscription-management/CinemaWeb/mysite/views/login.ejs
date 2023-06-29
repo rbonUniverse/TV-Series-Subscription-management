@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body style="overflow: hidden">
+    <div class="log-in">
+      <h1>Login</h1>
+      <br />
+      <form id="loginForm" method="POST" action="/login">
+        <label for="username">Username:</label>
+        <input type="text" name="username" />
+        <br />
+        <br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" />
+        <br />
+        <br />
+        <div class="loginButton">
+          <button onclick="this.form.submit()" type="submit">Login</button>
+        </div>
+      </form>
+    </div>
+    <div class="newUserLink">
+      <h4>
+        new user ?
+        <button>
+          <a href="/createAccountThroughLink">Create Account</a>
+        </button>
+      </h4>
+    </div>
+  </body>
+</html>

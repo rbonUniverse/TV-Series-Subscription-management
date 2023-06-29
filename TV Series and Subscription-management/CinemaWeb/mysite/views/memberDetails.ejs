@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Member Details</h1>
+    <br />
+    <br />
+    <table class="tb">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+      </tr>
+      <% member.forEach (m => { %>
+      <tr>
+        <td><%= m.name %></td>
+        <td><%= m.email %></td>
+        <td><%= m.city %></td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <table class="tb">
+      <h2 class="memberSubscriptionsToShows">Member Subscriptions to Shows</h2>
+      <br />
+      <tr>
+        <th>Movie Name</th>
+        <th>Genres</th>
+        <th>Premiered</th>
+        <th>Image</th>
+      </tr>
+      <% m.subscriptions.forEach (subs => { %>
+      <tr>
+        <td><%= subs.Name %></td>
+        <td><%= subs.Genres %></td>
+        <td><%= subs.Date %></td>
+        <td><img class="showDetailsImage" src="<%= subs.Image %>" /></td>
+      </tr>
+      <% })}) %>
+    </table>
+  </body>
+</html>

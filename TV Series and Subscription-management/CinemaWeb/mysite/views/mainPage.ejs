@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1 class="navigationPage">Navigation Page</h1>
+    <div class="divMainPageForms">
+      <% if (!permissions.includes("viewShows")) { } else { %>
+      <div class="divFormShows">
+        <button><a href="/shows">Shows</a></button>
+      </div>
+      <% } %> <% if (!permissions.includes("viewSubscriptions")) { } else { %>
+      <div class="divFormSubscriptions">
+        <button><a href="/subscriptions">Subscriptions</a></button>
+      </div>
+      <% } %> <% if (role != "Admin") { } else { %>
+      <div class="divUsersManagementAndLogoutButton">
+        <button><a href="/usersManagement">Users Management</a></button>
+      </div>
+      <% } %>
+      <div class="logoutButton">
+        <button>
+          <a href="/login">Logout</a>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

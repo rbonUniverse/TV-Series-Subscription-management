@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <form class="spanForm" method="POST" action="/shows/search">
+      <span class="spanTitle">Shows</span>
+      <label for="name">Enter TV Series Name:</label>
+      <input name="name" type="text" />
+      <button onclick="this.form.submit()" type="submit">Search</button>
+    </form>
+    <div class="addNewShowAndBackToMainPageButtons">
+      <div class="backToMainPageButtonInShowsPage">
+        <form method="POST" action="/mainPage">
+          <button>Back to Main Page</button>
+        </form>
+      </div>
+      <div class="addNewShowButton">
+        <button>
+          <a href="/shows/new">Add New Show</a>
+        </button>
+      </div>
+    </div>
+    <br />
+    <br />
+    <table class="tb">
+      <tr>
+        <th>Title</th>
+        <th>Genres</th>
+        <th>Photo</th>
+        <th>Subscribers Watched</th>
+        <% if (!permissions.includes("updateShows")) { } else { %>
+        <th>Edit</th>
+        <% } %> <% if (!permissions.includes("deleteShows")) { } else { %>
+        <th>Delete</th>
+        <% } %>
+      </tr>
+      <% show.forEach(s => { %>
+      <tr>
+        <td><%= s.Name %></td>
+        <td><%= s.Genres %></td>
+        <td><img class="showImage" src="<%= s.Image %>" /></td>
+        <td>
+          <% s.membersDetails.forEach(member => { %>
+          <ul>
+            <li>
+              <a class="memberLink" href="/shows/member/<%= member._id %>"
+                ><%= member.Name %></a
+              >
+            </li>
+          </ul>
+          <% }) %>
+        </td>
+        <% if (!permissions.includes("updateShows")) { } else { %>
+        <td>
+          <button>
+            <a href="/shows/<%= s._id %>">Edit</a>
+          </button>
+        </td>
+        <% } %> <% if (!permissions.includes("deleteShows")) { } else { %>
+        <td>
+          <form
+            id="deleteShowForm"
+            method="POST"
+            action="/shows/delete/<%= s._id %>"
+          >
+            <button onclick="this.form.submit()" type="submit">Delete</button>
+          </form>
+        </td>
+        <% } %>
+      </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>

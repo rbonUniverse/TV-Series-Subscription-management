@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Edit Show</h1>
+    <div class="editShowForm">
+      <form
+        id="editShowForm"
+        method="POST"
+        action="/shows/<%= presentShow._id %>"
+      >
+        <label for="Name">Show Name:</label>
+        <input type="text" name="Name" value="<%= presentShow.Name %>" />
+        <br />
+        <br />
+        <label for="Genres">Genres:</label>
+        <input type="text" name="Genres" value="<%= presentShow.Genres %>" />
+        <br />
+        <br />
+        <label for="Date">Premiere:</label>
+        <input type="date" name="Date" value="<%= presentShow.Date %>" />
+        <br />
+        <br />
+        <label for="Image">Image URL:</label>
+        <input type="text" name="Image" value="<%= presentShow.Image %>" />
+        <br />
+        <br />
+        <div class="editShowPageButtons">
+          <div class="editShowButton">
+            <button onclick="this.form.submit()" type="submit">Edit</button>
+          </div>
+          <div class="backToShowsPageButtonInEditPage">
+            <button><a href="/shows">Cancel</a></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
