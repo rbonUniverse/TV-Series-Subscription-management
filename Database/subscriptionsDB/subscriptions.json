@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "649af5c39e30b4e7dfb17bb9"
+  },
+  "MemberId": "648b9827e1e467db3b669298",
+  "Shows": [
+    {
+      "showId": "648ba0e1c86da4cfabe647e2",
+      "date": "22/09/2014",
+      "_id": {
+        "$oid": "649af5c39e30b4e7dfb17bba"
+      }
+    }
+  ]
+}]
