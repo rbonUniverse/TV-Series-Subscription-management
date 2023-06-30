@@ -3,9 +3,9 @@
 <h2># Installation</h2>
 1. Fork the project
 <br />
-2. Recover the mongoDB "subscriptionsDB" database for the API Server, by the files provided in the project
+2. Recover the mongoDB "subscriptionsDB" database for the API Server, by the files provided in the "Database" folder
 <br/>
-3. Recover the mongoDB "usersDB" database for the CinemaWeb, by the files provided in the project
+3. Recover the mongoDB "usersDB" database for the CinemaWeb, by the files provided in the "Database" folder
 <br />
 4. Open the project in the IDE
 <br />
