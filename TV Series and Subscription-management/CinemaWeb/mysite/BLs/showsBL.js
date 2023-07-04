@@ -74,70 +74,85 @@ const addNewShow = async (obj) => {
 };
 
 // Search show - if it got subscribers add them to the searched show
-const searchShowsWithSubscriptions = async (obj) => {
+const searchShowsWithSubscriptions = async (query) => {
   // Get all members from SubscriptionsDB Server
   const membersFromAPI = await subscriptionsDAL.getAllMembers();
   // Get all subscriptions from SubscriptionsDB Server
   const subscriptionsFromAPI = await subscriptionsDAL.getAllSubscriptions();
   // Get all shows from SubscriptionsDB Server
   const showsArr = await showsDAL.getAllShows();
-  // Create Array of filtered shows
-  // if the filtered shows got subscribed
-  // add the properties of the members to each of the filtered show
-  const filteredShowsWithSubscribers = [];
-  // Create a new filteredShows variable
-  let filteredShows;
-  if (obj == undefined) {
+  if (query == undefined) {
     // If the function got undefined obj (user pressed on search button with empty search field)
-    const showsWithSubscribers = getAllShowsAndSubscriptions();
+    const showsWithSubscribers = await getAllShowsAndSubscriptions();
     // Return Shows with subscribers
     return showsWithSubscribers;
   } else {
-    // Assign the filtered shows Array by the search text to the filteredShows variable
-    filteredShows = showsArr.filter((m) =>
-      m.Name.toLowerCase().includes(obj.name.toLowerCase())
+    // Create Array of filtered shows
+    // if the filtered shows got subscribed
+    // add the properties of the members to each of the filtered show
+    const filteredShowsWithSubscribers = getFilteredShowsWithSubscribers(
+      showsArr,
+      query,
+      subscriptionsFromAPI,
+      membersFromAPI
     );
+    // Return filtered shows with subscribers
+    return filteredShowsWithSubscribers;
+  }
+};
 
-    filteredShows.forEach((show) => {
-      // Create a new show Object and add membersDetails Array that will contain
-      // all the properties of the member that subscribed to the show
-      const obj = {
-        _id: show._id,
-        Name: show.Name,
-        Genres: show.Genres,
-        Date: show.Date,
-        Image: show.Image,
-        membersDetails: [],
-      };
-      // Get in the subscriptionsFromAPI and membersFromAPI with forEach
-      subscriptionsFromAPI.forEach((subscription) => {
-        subscription.Shows.forEach((showFromSubs) => {
-          membersFromAPI.forEach((member) => {
-            // Find the show that a member subscribed to by the common argument, the _id
-            if (
-              showFromSubs.showId == show._id &&
-              member._id == subscription.MemberId
-            ) {
-              // Create a new member Object with the relevant member details
-              const memberObj = {
-                _id: member._id,
-                Name: member.Name,
-                Email: member.Email,
-                City: member.City,
-              };
-              // If the condition it true,
-              // insert all the properties of the member to membersDetails Array
-              obj.membersDetails.push(memberObj);
-            }
-          });
+const getFilteredShowsWithSubscribers = (
+  showsArr,
+  query,
+  subscriptionsFromAPI,
+  membersFromAPI
+) => {
+  const filteredShowsWithSubscribers = [];
+  // Create a new filteredShows variable
+  let filteredShows;
+  // Assign the filtered shows Array by the search text to the filteredShows variable
+  filteredShows = showsArr.filter((m) =>
+    m.Name.toLowerCase().includes(query.name.toLowerCase())
+  );
+
+  filteredShows.forEach((show) => {
+    // Create a new show Object and add membersDetails Array that will contain
+    // all the properties of the member that subscribed to the show
+    const obj = {
+      _id: show._id,
+      Name: show.Name,
+      Genres: show.Genres,
+      Date: show.Date,
+      Image: show.Image,
+      membersDetails: [],
+    };
+    // Get in the subscriptionsFromAPI and membersFromAPI with forEach
+    subscriptionsFromAPI.forEach((subscription) => {
+      subscription.Shows.forEach((showFromSubs) => {
+        membersFromAPI.forEach((member) => {
+          // Find the show that a member subscribed to by the common argument, the _id
+          if (
+            showFromSubs.showId == show._id &&
+            member._id == subscription.MemberId
+          ) {
+            // Create a new member Object with the relevant member details
+            const memberObj = {
+              _id: member._id,
+              Name: member.Name,
+              Email: member.Email,
+              City: member.City,
+            };
+            // If the condition it true,
+            // insert all the properties of the member to membersDetails Array
+            obj.membersDetails.push(memberObj);
+          }
         });
       });
-      // Than insert all the obj of a member that created in line 101
-      // into filteredShowsWithSubscribers Array
-      filteredShowsWithSubscribers.push(obj);
     });
-  }
-  // Return filtered shows with subscribers
+    // Than insert all the obj of a member that created in line 101
+    // into filteredShowsWithSubscribers Array
+    filteredShowsWithSubscribers.push(obj);
+  });
   return filteredShowsWithSubscribers;
 };
 
@@ -218,6 +233,7 @@ module.exports = {
   getAllShows,
   addNewShow,
   searchShowsWithSubscriptions,
+  getFilteredShowsWithSubscribers,
   getOneShowDetails,
   getOneShowForEditingPage,
   editShow,
