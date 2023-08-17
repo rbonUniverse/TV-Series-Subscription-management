@@ -2,6 +2,7 @@
 </h1>
 <h2># Installation</h2>
 * No need to instal local database, the database is a cloud MongoDB Atlas database.
+<br />
 1. Fork the project
 <br />
 2. Open the project in the IDE
