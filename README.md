@@ -1,6 +1,7 @@
 <h1># TV-Seriesand Subscription Management
 </h1>
 <h2># Installation</h2>
+<br />
 * No need to instal local database, the database is a cloud MongoDB Atlas database.
 <br />
 1. Fork the project
