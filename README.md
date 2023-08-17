@@ -1,7 +1,7 @@
 <h1># TV-Seriesand Subscription Management
 </h1>
 <h2># Installation</h2>
-No need to instal local database, the database is a cloud MongoDB Atlas database.
+* No need to instal local database, the database is a cloud MongoDB Atlas database.
 1. Fork the project
 <br />
 2. Open the project in the IDE
