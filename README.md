@@ -19,6 +19,8 @@
 7. Run "npm start" command for API Server in the terminal to start the server
 <br />
 8. Run "npm start" command for CinemaWeb in the terminal to start the CinemaWeb
+<br>
+9. username: Admin, password: Admin
 <h2># Technologies used</h2>
 - Node.js
 <br />
