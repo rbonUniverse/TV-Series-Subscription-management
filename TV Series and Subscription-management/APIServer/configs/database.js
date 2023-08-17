@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 // MongoDB connection path
 const connectToDataBase = async () => {
-  await mongoose.connect("mongodb://127.0.0.1:27017/subscriptionsDB");
+  await mongoose.connect("mongodb+srv://robbyzigi:nUD1ZDyGX2O5SaOD@cluster0.zawahrr.mongodb.net/usersDB");
   console.log("Connected to Mongo");
 };
 
